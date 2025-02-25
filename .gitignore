@@ -1,0 +1,7 @@
+build/
+*.o
+*.exe
+*.out
+.vscode/
+.idea/
+BaoCaoDoAn_CTDL_Nhom4.docx

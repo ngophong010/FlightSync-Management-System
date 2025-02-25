@@ -1,6 +1,6 @@
-﻿#include "Header.h"
-#include "LinkedList.h"
-#include "Node.h"
+﻿#include "include/Header.h"
+#include "include/LinkedList.h"
+#include "include/Node.h"
 
 /********************************************
 * @Description Hàm khởi tạo Linked List 

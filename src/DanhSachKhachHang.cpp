@@ -1,4 +1,4 @@
-﻿#include "DanhSachKhachHang.h"
+﻿#include "include/DanhSachKhachHang.h"
 
 /********************************************
 * @Description Hàm xử lý đọc file cho Danh Sách Khách Hàng
@@ -6,9 +6,9 @@
 
 template <class KhachHang>
 void DanhSachKhachHang<KhachHang>::xuLyDocFile() {
-	ifstream ifile("KhachHang.txt");
+	ifstream ifile("data/KhachHang.txt");
 	if (!ifile) {
-		cout << "Khong mo duoc file KhachHang.txt!" << endl;
+		cout << "Khong mo duoc file data/KhachHang.txt!" << endl;
 		exit(1);
 		return;
 	}
@@ -42,7 +42,7 @@ void DanhSachKhachHang<KhachHang>::xuLyDocFile() {
 template <class KhachHang>
 void DanhSachKhachHang<KhachHang>::xuLyGhiFile(KhachHang data) {
 	ofstream ofile;
-	ofile.open("KhachHang.txt", ios::in | ios::app);
+	ofile.open("data/KhachHang.txt", ios::in | ios::app);
 	if (LinkedList<KhachHang>::getSize() != 1) {
 		ofile << endl;
 	}

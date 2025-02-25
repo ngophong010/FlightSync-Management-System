@@ -1,8 +1,8 @@
-﻿#include "DanhSachChuyenBay.h"
-#include "DanhSachMayBay.h"
-#include "DanhSachVeSuccess.h"
-#include "ArrayList.h"
-#include "ChuyenBay.h"
+﻿#include "include/DanhSachChuyenBay.h"
+#include "include/DanhSachMayBay.h"
+#include "include/DanhSachVeSuccess.h"
+#include "include/ArrayList.h"
+#include "include/ChuyenBay.h"
 #include "Ve.h"
 
 /********************************************
@@ -113,9 +113,9 @@ void DanhSachChuyenBay<ChuyenBay, MayBay, Ve>::hienThiSoLanBay(string soHieuMayB
 
 template <class ChuyenBay, class MayBay, class Ve>
 void DanhSachChuyenBay<ChuyenBay, MayBay, Ve>::xuLyDocFile(DanhSachMayBay<MayBay> DSMB, DanhSachVeSuccess<Ve> DSVS) {
-	ifstream ifile("ChuyenBay.txt");
+	ifstream ifile("data/ChuyenBay.txt");
 	if (!ifile) {
-		cout << "Khong mo duoc file ChuyenBay.txt!" << endl;
+		cout << "Khong mo duoc file data/ChuyenBay.txt!" << endl;
 		exit(1);
 		return;
 	}
@@ -151,7 +151,7 @@ void DanhSachChuyenBay<ChuyenBay, MayBay, Ve>::xuLyDocFile(DanhSachMayBay<MayBay
 template <class ChuyenBay, class MayBay, class Ve>
 void DanhSachChuyenBay<ChuyenBay, MayBay, Ve>::updateFile() {
 	ofstream ofile;
-	ofile.open("ChuyenBay.txt", ios::out);
+	ofile.open("data/ChuyenBay.txt", ios::out);
 	for (int i = 0; i < ArrayList<ChuyenBay>::getSize(); i++) {
 		ChuyenBay data = ArrayList<ChuyenBay>::getItem(i);
 		ofile << data.thongTinFile();

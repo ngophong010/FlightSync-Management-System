@@ -1,5 +1,5 @@
-﻿#include "DanhSachMayBay.h"
-#include "LinkedList.h"
+﻿#include "include/DanhSachMayBay.h"
+#include "include/LinkedList.h"
 
 /********************************************
 * @Description Hàm xử lý đọc file cho Danh Sách Máy Bay
@@ -7,9 +7,9 @@
 
 template <class MayBay>
 void DanhSachMayBay<MayBay>::xuLyDocFile() {
-	ifstream ifile("MayBay.txt");
+	ifstream ifile("data/MayBay.txt");
 	if (!ifile) {
-		cout << "Khong mo duoc file MayBay.txt!" << endl;
+		cout << "Khong mo duoc file data/MayBay.txt!" << endl;
 		exit(1);
 		return;
 	}

@@ -1,7 +1,7 @@
-﻿#include "DanhSachVeSuccess.h"
-#include "Header.h"
-#include "LinkedList.h"
-#include "Node.h"
+﻿#include "include/DanhSachVeSuccess.h"
+#include "include/Header.h"
+#include "include/LinkedList.h"
+#include "include/Node.h"
 
 /********************************************
 * @Description Hàm xử lý đọc file cho Danh Sách Vé Thành Công
@@ -9,9 +9,9 @@
 
 template <class Ve>
 void DanhSachVeSuccess<Ve>::xuLyDocFile() {
-	ifstream ifile("VeThanhCong.txt");
+	ifstream ifile("data/VeThanhCong.txt");
 	if (!ifile) {
-		cout << "Khong mo duoc file VeThanhCong.txt!" << endl;
+		cout << "Khong mo duoc file data/VeThanhCong.txt!" << endl;
 		exit(1);
 		return;
 	}
@@ -47,7 +47,7 @@ void DanhSachVeSuccess<Ve>::xuLyDocFile() {
 template <class Ve>
 void DanhSachVeSuccess<Ve>::xuLyGhiFile(Ve data) {
 	ofstream ofile;
-	ofile.open("VeThanhCong.txt", ios::in | ios::app);
+	ofile.open("data/VeThanhCong.txt", ios::in | ios::app);
 	if (LinkedList<Ve>::getSize() != 0) {
 		ofile << endl;
 	}
@@ -62,7 +62,7 @@ void DanhSachVeSuccess<Ve>::xuLyGhiFile(Ve data) {
 template <class Ve>
 void DanhSachVeSuccess<Ve>::updateFile() {
 	ofstream ofile;
-	ofile.open("VeThanhCong.txt", ios::out);
+	ofile.open("data/VeThanhCong.txt", ios::out);
 	Node<Ve>* pWalker = LinkedList<Ve>::getHead();
 	while (pWalker != NULL) {
 		ofile << pWalker->_data.thongTinFile();

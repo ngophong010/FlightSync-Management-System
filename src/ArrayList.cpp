@@ -1,5 +1,5 @@
-﻿#include "Header.h"
-#include "ArrayList.h"
+﻿#include "include/Header.h"
+#include "include/ArrayList.h"
 /********************************************
 * @Description Hàm khởi tạo List rỗng có số phần tử tối đa là MAX_SIZE
 ********************************************/

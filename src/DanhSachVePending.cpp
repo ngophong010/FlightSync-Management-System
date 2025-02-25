@@ -1,7 +1,7 @@
-﻿#include "DanhSachVePending.h"
-#include "Queue.h"
-#include "Ve.h"
-#include "Header.h"
+﻿#include "include/DanhSachVePending.h"
+#include "include/Queue.h"
+#include "include/Ve.h"
+#include "include/Header.h"
 
 /********************************************
 * @Description Hàm xử lý đọc file cho Danh Sách Vé Đang Chờ
@@ -9,9 +9,9 @@
 
 template <class Ve>
 void DanhSachVePending<Ve>::xuLyDocFile() {
-	ifstream ifile("VeDangCho.txt");
+	ifstream ifile("data/VeDangCho.txt");
 	if (!ifile) {
-		cout << "Khong mo duoc file VeDangCho.txt!" << endl;
+		cout << "Khong mo duoc file data/VeDangCho.txt!" << endl;
 		exit(1);
 		return;
 	}
@@ -47,7 +47,7 @@ void DanhSachVePending<Ve>::xuLyDocFile() {
 template <class Ve>
 void DanhSachVePending<Ve>::xuLyGhiFile(Ve data) {
 	ofstream ofile;
-	ofile.open("VeDangCho.txt", ios::in | ios::app);
+	ofile.open("data/VeDangCho.txt", ios::in | ios::app);
 	if (Queue<Ve>::getSize() != 1) {
 		ofile << endl;
 	}
@@ -62,7 +62,7 @@ void DanhSachVePending<Ve>::xuLyGhiFile(Ve data) {
 template <class Ve>
 void DanhSachVePending<Ve>::updateFile() {
 	ofstream ofile;
-	ofile.open("VeDangCho.txt", ios::out);	
+	ofile.open("data/VeDangCho.txt", ios::out);	
 	for (int i = 0; i < Queue<Ve>::getSize(); i++) {
 		Ve data = Queue<Ve>::peek();
 		ofile << data.thongTinFile();

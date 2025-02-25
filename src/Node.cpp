@@ -1,5 +1,5 @@
-﻿#include "Node.h"
-#include "Header.h"
+﻿#include "include/Node.h"
+#include "include/Header.h"
 
 /********************************************
 * @Description Hàm khởi tạo một Node có giá trị là data

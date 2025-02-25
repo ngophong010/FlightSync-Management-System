@@ -1,4 +1,4 @@
-﻿#include "KhachHang.h"
+﻿#include "include/KhachHang.h"
 
 /********************************************
 * @Description Hàm khởi tạo Khách Hàng mới
